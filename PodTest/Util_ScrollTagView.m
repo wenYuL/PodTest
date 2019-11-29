@@ -8,7 +8,7 @@
 
 #import "Util_ScrollTagView.h"
 #import "Util_ScrollViewButton.h"
-#import <Masonry.h>
+//#import <Masonry.h>
 
 @interface Util_ScrollTagView ()<UIScrollViewDelegate>
 
@@ -133,11 +133,11 @@
     __weak typeof (self)wsf = self;
     UIView *zeroView = [[UIView alloc]init];
     [self.scrollview addSubview:zeroView];
-    [zeroView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@0);
-        make.height.equalTo(@0);
-        make.leading.top.equalTo(@0);
-    }];
+//    [zeroView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.equalTo(@0);
+//        make.height.equalTo(@0);
+//        make.leading.top.equalTo(@0);
+//    }];
     UIView *lastView = zeroView;
     int pos = 0 ;
     for( NSString *title in _titles ) {
@@ -146,24 +146,24 @@
         [btn.titleLabel setText:title];
         [self.scrollview addSubview:btn]; //加入到scrollview
         [self.buttons addObject:btn]; // 将按钮保存起来，以便之后做清理工作
-        [btn.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            // titlelabel ～ 标题标签的约束
-            make.leading.equalTo(btn).with.offset(self.xSpan / 2.0);
-            make.trailing.equalTo(btn).with.offset(-self.xSpan / 2.0);
-            make.centerY.equalTo(btn);
-        }];
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            //按钮的约束 ，尚未设置width ，由titlelabel 内容撑开
-            make.leading.equalTo(lastView.mas_trailing).with.offset(0);
-            make.top.equalTo(wsf.scrollview);
-            make.height.equalTo(wsf.scrollview);
-        }];
+//        [btn.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            // titlelabel ～ 标题标签的约束
+//            make.leading.equalTo(btn).with.offset(self.xSpan / 2.0);
+//            make.trailing.equalTo(btn).with.offset(-self.xSpan / 2.0);
+//            make.centerY.equalTo(btn);
+//        }];
+//        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+//            //按钮的约束 ，尚未设置width ，由titlelabel 内容撑开
+//            make.leading.equalTo(lastView.mas_trailing).with.offset(0);
+//            make.top.equalTo(wsf.scrollview);
+//            make.height.equalTo(wsf.scrollview);
+//        }];
         lastView = btn;
     }
     // 为了设置contentsize
-    [lastView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(@0);
-    }];
+//    [lastView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.trailing.equalTo(@0);
+//    }];
 }
 
 /**
@@ -196,12 +196,12 @@
 
 - (void)initSubViewAutoLayout {
     __weak typeof (self)wsf = self;
-    [self.scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(wsf);
-        make.top.equalTo(wsf);
-        make.width.equalTo(wsf);
-        make.height.equalTo(wsf);
-    }];
+//    [self.scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.leading.equalTo(wsf);
+//        make.top.equalTo(wsf);
+//        make.width.equalTo(wsf);
+//        make.height.equalTo(wsf);
+//    }];
 }
 
 #pragma mark scrollView delegates
