@@ -11,5 +11,4 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios
   spec.source       = { :git => "https://github.com/wenYuL/PodTest.git", :tag => "#{spec.version}" }
   spec.source_files = "PodTest/*.{h,m}"
-  spec.frameworks   = 'Foundation', 'UIKit', 'Masonry'
 end
