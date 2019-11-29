@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "PodTest"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "Test PodTest."
   spec.homepage     = "https://github.com/wenYuL/PodTest"
   spec.license      = "MIT (example)"
