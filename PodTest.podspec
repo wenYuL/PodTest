@@ -1,4 +1,3 @@
-
 Pod::Spec.new do |spec|
 
   spec.name         = "PodTest"
@@ -10,5 +9,6 @@ Pod::Spec.new do |spec|
   spec.author       = { "刘文裕" => "wenyugogo@sina.com" }
   spec.platform     = :ios
   spec.source       = { :git => "https://github.com/wenYuL/PodTest.git", :tag => "#{spec.version}" }
-  spec.source_files = "PodTest/*.{h,m}"
+  spec.source_files = "PodTest/**/*.{h,m}"
+  spec.frameworks   = 'UIKit'
 end
